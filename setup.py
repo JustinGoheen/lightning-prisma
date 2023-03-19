@@ -20,7 +20,9 @@ rootdir = Path(__file__).parent
 long_description = (rootdir / "README.md").read_text()
 
 setup(
-    name="{ component_name }",
+    name="lightning_prisma",
+    package_dir={"": "src"},
+    packages=["lightning_prism"],
     version="0.0.1",
     description="",
     long_description=long_description,
