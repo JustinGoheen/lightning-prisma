@@ -15,3 +15,5 @@
 # limitations under the License. -->
 
 This is a [Prisma](https://www.prisma.io) component for [Lightning AI](https://lightning.ai) built with [Prisma-Client-Py](https://prisma-client-py.readthedocs.io/en/stable/).
+
+See more on how Prisma interacts with Supabase in the [Supabase Integration](https://supabase.com/docs/guides/integrations/prisma) docs.
