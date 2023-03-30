@@ -14,6 +14,7 @@
 
 import abc
 import asyncio
+import prisma
 from prisma import Prisma
 from lightning import LightningWork
 
@@ -25,3 +26,13 @@ class LightningPrisma(LightningWork, abc.ABC):
 
     async def connect_prisma(self):
         await self.prisma.connect()
+
+    async def disconnect_prisma(self):
+        await self.prisma.disconnect()
+
+    def run(self):
+        self.connect_prisma()
+
+        # write queries here
+
+        self.disconnect_prisma()
