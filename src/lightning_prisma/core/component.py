@@ -11,3 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+import abc
+import asyncio
+from prisma import Prisma
+from lightning import LightningWork
+
+
+class LightningPrisma(LightningWork, abc.ABC):
+    def __init__(self):
+        super().__init__()
+        self.prisma = Prisma()
+
+    async def connect_prisma(self):
+        await self.prisma.connect()

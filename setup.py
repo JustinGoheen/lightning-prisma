@@ -22,7 +22,7 @@ long_description = (rootdir / "README.md").read_text()
 setup(
     name="lightning_prisma",
     package_dir={"": "src"},
-    packages=["lightning_prism"],
+    packages=["lightning_prisma"],
     version="0.0.1",
     description="",
     long_description=long_description,
