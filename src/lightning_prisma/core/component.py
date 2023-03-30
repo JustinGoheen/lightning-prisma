@@ -19,15 +19,11 @@ from lightning import LightningWork
 
 
 class LightningPrisma(LightningWork, abc.ABC):
+    "a synchronous Prisma client"
+
     def __init__(self):
         super().__init__()
         self.prisma = Prisma()
-
-    async def connect_prisma_async(self):
-        await self.prisma.connect()
-
-    async def disconnect_prisma_async(self):
-        await self.prisma.disconnect()
 
     def connect_prisma(self):
         self.prisma.connect()
@@ -35,15 +31,9 @@ class LightningPrisma(LightningWork, abc.ABC):
     def disconnect_prisma(self):
         self.prisma.disconnect()
 
-    def run(self, connect_async: False):
-        if connect_async:
-            self.connect_prisma_async()
-        else:
-            self.connect_prisma()
+    def run(self):
+        self.connect_prisma()
 
         # write queries here
 
-        if connect_async:
-            self.disconnect_prisma_async()
-        else:
-            self.disconnect_prisma()
+        self.disconnect_prisma()
