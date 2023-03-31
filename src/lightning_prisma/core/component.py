@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import abc
-import asyncio
 from prisma import Prisma
 from lightning import LightningWork
 
